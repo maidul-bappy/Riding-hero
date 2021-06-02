@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/p2SY38d/Frame.png",
+        "transport": "Bike",
+        "capacity": 2,
+        "price": 78
+    },
+  
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/qkns0g6/Frame-2.png",
+        "transport": "Car",
+        "capacity": 4,
+        "price": 65
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/27Ln1f4/Frame-1.png",
+        "transport": "Bus",
+        "capacity": 50,
+        "price": 50
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/5Rjzdtp/Group.png",
+        "transport": "Train",
+        "capacity": 200,
+        "price": 32
+    }
+]

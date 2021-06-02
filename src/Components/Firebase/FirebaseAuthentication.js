@@ -89,22 +89,3 @@ export const signOut = () => {
       return "Ops..."
     });
 };
-
-export const facebookSignIn = () => {
-  const provider = new firebase.auth.FacebookAuthProvider();
-  return firebase
-    .auth()
-    .signInWithPopup(provider)
-    .then((userCredential) => {
-      const newUserInfo = userCredential.user;
-      newUserInfo.error = "";
-      newUserInfo.success = true;
-      return newUserInfo;
-    })
-    .catch((error) => {
-      const newUserInfo = {};
-      newUserInfo.error = error.message;
-      newUserInfo.success = false;
-      return newUserInfo;
-    });
-};

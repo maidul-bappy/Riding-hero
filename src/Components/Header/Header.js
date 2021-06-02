@@ -11,7 +11,7 @@ const Header = () => {
     const login = () => {
         history.push('/login');
     }
-    
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <Link to='/'> <img className="ms-5" src={logo} alt="" /> </Link>
@@ -22,10 +22,10 @@ const Header = () => {
             <div className="Nav-Menu collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto me-5">
                     <li className="nav-item active">
-                        <Link className="nav-link ms-5 text-dark" to="home">Home</Link>
+                        <Link className="nav-link ms-5 text-dark" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link ms-5 text-dark" to="destination">Destination</Link>
+                        <Link className="nav-link ms-5 text-dark" to="/destination">Destination</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link ms-5  text-dark" to="/">Blog</Link>
@@ -38,7 +38,7 @@ const Header = () => {
                     }
                     <li className="nav-item">
                         {
-                            (loggedInUser?.email) ? <button style={{ fontWeight: "bolder" }} onClick={() => setLoggedInUser({})} className="btn btn-danger ">Log Out</button> : <button onClick={login} className="btn btn-primary">Log In</button>
+                            (loggedInUser?.email) ? <button style={{ fontWeight: "600" }} onClick={() => setLoggedInUser({})} className="btn btn-danger ">Log Out</button> : <button onClick={login} className="btn btn-primary">Log In</button>
                         }
                     </li>
                 </ul>

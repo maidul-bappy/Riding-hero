@@ -21,10 +21,7 @@ const App = () => {
         <Route exact path='/'>
           <Home></Home>
         </Route>
-        <Route path='/home'>
-          <Home></Home>
-        </Route>
-        <PrivateRoute path='/destination'>
+        <PrivateRoute path='/destination/:id'>
           <Destination></Destination>
         </PrivateRoute>
         <Route path='/login'>

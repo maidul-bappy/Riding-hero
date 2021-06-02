@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 import Header from '../Header/Header';
-import { facebookSignIn, googleSignIn, signInWithEmailAndPassword, initializeAppfirebase, signupWithEmailAndPassword } from '../Firebase/FirebaseAuthentication';
+import {googleSignIn, signInWithEmailAndPassword, initializeAppfirebase, signupWithEmailAndPassword } from '../Firebase/FirebaseAuthentication';
 
 initializeAppfirebase()
 
 const LogIn = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [setLoggedInUser] = useContext(UserContext);
   const [logInError, setLogInError] = useState('');
   const [isNewUser, setIsNewUser] = useState(() => false);
   const [inputError, setInputError] = useState({});
@@ -126,13 +126,6 @@ const LogIn = () => {
       })
   }
 
-  const signInWithFacebook = () => {
-    facebookSignIn()
-      .then(res => {
-        handleResponse(res, res.success)
-      })
-  }
-
   const handleResponse = (res, success) => {
     if (success) {
       console.log(res)
@@ -156,7 +149,7 @@ const LogIn = () => {
                 {
                   isNewUser ?
                     <form className="form p-2" onSubmit={submitSignUp}>
-                      <h3 className="mb-3">Create an account</h3>
+                      <h3 className="mb-3">Create an Account</h3>
                       <div className="form-group mb-3">
                         <input className="form-control" name="name" onChange={handleInputValid} type="text" placeholder="Enter your name" required />
                         <small className="text-danger">{inputError?.name}</small>
@@ -166,11 +159,11 @@ const LogIn = () => {
                         <small className="text-danger">{inputError?.email}</small>
                       </div>
                       <div className="form-group mb-3">
-                        <input className="form-control" name="password" onChange={handleInputValid} type="password" placeholder="Create your password" required />
+                        <input className="form-control" name="password" onChange={handleInputValid} type="password" placeholder="Enter your password" required />
                         <small className="text-danger">{inputError?.password}</small>
                       </div>
                       <div className="form-group mb-3">
-                        <input className="form-control" name="confirmPassword" onChange={handleInputValid} type="password" placeholder="Re-type your password" required />
+                        <input className="form-control" name="confirmPassword" onChange={handleInputValid} type="password" placeholder="Confirm your password" required />
                         <small className="text-danger">{inputError?.confirmPassword}</small>
                       </div>
                       <div className="form-group">
@@ -178,7 +171,7 @@ const LogIn = () => {
                       </div>
 
                       <div className="text-center">
-                        <p className="m-3">Already have an account? <span style={{ cursor: 'pointer' }} onClick={() => setIsNewUser(false)} className="text-primary"> Login</span> </p>
+                        <p className="m-3">Already Have an Account? <span style={{ cursor: 'pointer' }} onClick={() => setIsNewUser(false)} className="text-primary"> Login</span> </p>
                         <p>-----------OR-----------</p>
                       </div>
                     </form>
@@ -192,11 +185,11 @@ const LogIn = () => {
                         <input className="form-control" name="password" onChange={handleLoginInput} type="password" placeholder="Enter your password" required />
                       </div>
                       <div className="form-group">
-                        <button className="btn btn-primary btn-block" type="submit"><span><i className="fas fa-sign-in-alt"></i> </span> Sign in </button>
+                        <button className="btn btn-primary btn-block" type="submit"> Sign in </button>
                       </div>
 
                       <div className="text-center">
-                        <p className="m-3">Don't have a account? <span style={{ cursor: 'pointer' }} onClick={() => setIsNewUser(true)} className="text-primary"> Create an account</span> </p>
+                        <p className="m-3">Don't Have an Account? <span style={{ cursor: 'pointer' }} onClick={() => setIsNewUser(true)} className="text-primary"> Create an account</span> </p>
                         <p>-----------OR-----------</p>
                       </div>
                     </form>
